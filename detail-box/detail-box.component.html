@@ -1,0 +1,70 @@
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li [class.active]="viewMode == 'char'" rel="char"><a (click)="viewMode ='char'">Characteristics</a></li>
+    <li [class.active]="viewMode == 'genetic'" rel="genetic"><a (click)="viewMode ='genetic'">Genetic</a></li>
+    <li [class.active]="viewMode == 'bonus'" rel="bonus"><a (click)="viewMode ='bonus'">Bonus</a></li>
+  </ul>
+
+  <div class="box-content" [ngSwitch]="viewMode">
+    <div id="char" *ngSwitchCase="'char'">
+      <div class="flex-row-between">
+        <div>
+          <strong>Breed</strong>: <span class="breed">French Trotter</span>
+        </div>
+        <div>
+          <strong>Age</strong>: 10 years
+        </div>
+      </div>
+
+      <div class="flex-row-between">
+        <div>
+          <strong>Species</strong>: Riding Horse
+        </div>
+        <div>
+          <strong>Height</strong>: 16.2 Hands
+        </div>
+      </div>
+
+      <div class="flex-row-between">
+        <div>
+          <strong>Gender</strong>: Mare
+        </div>
+        <div>
+          <strong>Weight</strong>: 504 kg
+        </div>
+      </div>
+
+      <div class="flex-row-between">
+        <div>
+          <strong>Coat</strong>: Chestnut
+        </div>
+        <div>
+          <strong>Date of Birth</strong>: 10/1/2011
+        </div>
+      </div>
+
+      <div class="flex-row-between">
+        <div>
+          <strong>Producer</strong>: Emma
+        </div>
+      </div>
+
+     <table class="table table-bordered">
+       <thead>
+         <tr>
+           <th>Tack</th>
+           <th>Items</th>
+         </tr>
+       </thead>
+     </table>
+    </div>
+
+    <div id="genetic" *ngSwitchCase="'genetic'">
+      <p>Some content in menu 1.</p>
+    </div>
+
+    <div id="bonus" *ngSwitchCase="'bonus'">
+      <p>Some content in menu 2.</p>
+    </div>
+  </div>
+</div>

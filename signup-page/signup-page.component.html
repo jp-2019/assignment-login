@@ -1,0 +1,153 @@
+ <header>
+   <nav class="navbar navbar-light bg-light justify-content-between">
+     <a href="#" class="navbar-left"><img src="/assets/images/howrselogo.png"></a>
+     <!--<img src="https://ca.howrse.com/media/equideo/image/interface/header/logo/disconnected/howrse.png" class="transparent horse-img">-->
+     <!-- this router link opens new login page on click of button
+     <a routerLink="/login"><button class="btn btn-login login-label">Login</button></a> -->
+     <!-- this button opens login dialog from material -->
+     <button class="btn btn-login login-label" (click)="openDialog()">Login</button>
+</nav>
+  </header>
+  <div class="container">
+    <h2 class="text-center">Choose a Horse...</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="row flex-between">
+        <div class="col-sm-4">
+          <div class="circle-left"></div>
+          <h4 class="text-center">Breeds</h4>
+          <ul class="list-unstyled text-right text-nowrap">
+            <li *ngFor="let breed of allBreeds">
+              <label>
+                {{breed.breed}}<input type="radio" name="breed" formControlName="breed" [checked]="idx === 0"
+                                      [value]="breed.breed_id">
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-sm-4 flex-column">
+          <img src="https://ca.howrse.com/media/equideo/image/chevaux/adulte/trotteur/normal/300/alz.png" class="transparent horse-img">
+          <div class="skill-set text-center">
+            <h4 class="text-nowrap">Best Skill:</h4>
+            <strong class="text-nowrap">Trot</strong>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="circle-right"></div>
+          <h4 class="text-center">Coats</h4>
+          <ul class="list-unstyled text-nowrap">
+            <li *ngFor="let color of allColors">
+              <label>
+                <input type="radio" name="color" formControlName="color" [checked]="idx === 0"
+                       [value]="color.color_id">{{color.color}}
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h2 class="text-center">...and create your account</h2>
+
+      <!--<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">-->
+      <div class="row d-flex">
+        <div class="form-col col-centered">
+          <div class="form-group">
+            <label class="sr-only" for="login">Login</label>
+            <input type="text" class="form-control" formControlName="login" id="login" placeholder="Enter Login name" [class.is-invalid]="login.invalid && login.touched">
+          </div>
+        </div>
+        <div class="error-msg">
+          <div *ngIf="login.invalid && login.touched">
+            <div *ngIf="login.errors?.required" class="">Login name is required</div>
+            <div *ngIf="login.errors?.minlength" class="">Login name must be at least 3 characters</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-flex">
+        <div class="form-col col-centered">
+          <div class="form-group">
+            <label class="sr-only" for="password">Password</label>
+            <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password" [class.is-invalid]="password.invalid && password.touched">
+          </div>
+        </div>
+        <div class="error-msg">
+          <div *ngIf="password.invalid && password.touched">
+            <div *ngIf="password.errors?.required" class="">Password is required</div>
+            <div *ngIf="password.errors?.pattern" class="">Password must contain an Uppercase and Lowercase letter, a number, and at least 8 characters</div>
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="row d-flex" formGroupName="DoB">
+        <div class="form-group col-sm-2">
+          <select class="form-control" formControlName="day" id="birthDay">
+            <option>Day</option>
+            <option>2</option>
+            <option>16</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-2">
+          <select class="form-control" formControlName="month" id="birthMonth">
+            <option>Month</option>
+            <option>September</option>
+            <option>June</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-2">
+          <select class="form-control" formControlName="year" id="birthYear">
+            <option>Year</option>
+            <option>1990</option>
+            <option>2000</option>
+          </select>
+        </div>
+      </div>-->
+
+      <div class="row d-flex">
+        <div class="form-col col-centered">
+          <div class="form-group">
+            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter email" [class.is-invalid]="email.invalid && email.touched">
+          </div>
+        </div>
+        <div class="error-msg">
+          <div *ngIf="email.invalid && email.touched">
+            <div *ngIf="email.errors?.required" class="">Email is required</div>
+            <div *ngIf="email.errors?.email" class="">Not a valid Email</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inscription">
+        <div class="form-check text-center">
+          <input type="checkbox" class="form-check-input" formControlName="terms" id="terms">
+          <label class="form-check-label" for="terms">
+            I have read and agree to the <a target="privacy"
+                                            class="link-style" href="https://www.owlient.com/tou/ca">Terms and Conditions of Use,</a>
+            the <a target="privacy" class="link-style" href="https://www.owlient.com/eula/ca">
+              End User
+              License Agreement,
+            </a> and the <a target="privacy" class="link-style"
+                            href="https://www.owlient.com/pp/ca">Privacy Policy</a>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="btn-col col-centered">
+          <button type="submit" [disabled]="!signupForm.valid" class="btn btn-play btn-lg btn-block">Play</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    <!-- disclaimer and terms  -->
+    <div>
+      <label class="custom-control-label" for="terms">
+        This information is collected by Owlient to create your account.
+        <a target="privacy" class="link-style" href="https://ca.howrse.com/footer/privacyNotice">
+          More information about the processing of your personal data and your rights.
+        </a>
+      </label>
+    </div>
+    <div class="body-background"></div>
+  </div>
+

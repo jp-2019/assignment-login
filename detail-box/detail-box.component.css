@@ -1,0 +1,63 @@
+.nav-tabs > li > a {
+  margin-right: .7rem;
+  background-color: #eae58f;
+  border-radius: 7px 7px 0 0;
+  padding: .4rem .6rem;
+  border-bottom: 0;
+  border: 2px solid #e2da78;
+  position: relative;
+  box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px 0 inset;
+  color: #643100;
+}
+
+.nav-tabs > li.active > a {
+  background-image: linear-gradient(#eae58f, #f6f3b0);
+  border: 2px solid #e2da78;
+  border-bottom: 0;
+  z-index: 5;
+}
+
+  .nav-tabs > li.active > a::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    background-color: #f6f3b0;
+  }
+
+.nav-tabs {
+  border: 0;
+}
+
+.flex-row-between {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffdf;
+}
+
+.breed {
+  color: #930055;
+}
+
+.table-bordered {
+  margin-top: 1.4rem;
+  border-color: #e2da78;
+}
+
+.table {
+  background-color: #fcfabf;
+}
+
+.table-bordered > thead > tr > th {
+  border-color: #e2da78;
+}
+
+.table-bordered > thead > tr > th:first-child {
+  border-left: 0;
+}
+
+.table-bordered > thead > tr > th:last-child {
+  border-right: 0;
+}

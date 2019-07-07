@@ -1,0 +1,53 @@
+   <div class="row flex-between">
+      <div class="row d-flex">
+        <div class="form-col col-centered">
+          <div class="mat-dialog-container">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <button class="btn-facebook btn-lg login-label form-group form-col col-centered">
+              Log in with Facebook
+            </button>
+            <div class="hr-sect">or</div>
+            <div class="form-group form-col col-centered">
+              <label class="sr-only" for="login">Login</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="login"
+                id="login"
+                placeholder="Login"
+                [class.is-invalid]="login.invalid && login.touched"
+              />
+            </div>
+            <div class="form-group form-col col-centered">
+              <label class="sr-only" for="password">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                id="password"
+                placeholder="Password"
+                [class.is-invalid]="password.invalid && password.touched"
+              />
+            </div>
+            <div class="form-check form-check-inline form-group form-col col-centered">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">Stay logged in</label>
+              </div>
+            <div class="row">
+                <div class="btn-col col-centered form-group form-col col-centered">
+                  <button type="submit" [disabled]="!signupForm.valid" class="btn btn-connection btn-lg btn-block">Connection</button>
+                </div>
+              </div>
+          </form>
+          <div class="forgotten-password">
+          <label class="forgotten-password text-centered" for="forgottenpassword">
+            Forgotten your password?
+            <a target="forgottenpassword" class="link-style" href=""> </a>
+          </label>
+          </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     <div class="col-sm"></div>
+<div class="body-background"></div>
