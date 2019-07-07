@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  background-color: #BFD16C;
+}
+
+.box-content {
+  background-color: #f6f3b0;
+  border: 2px solid #e2da78;
+  position: relative;
+  z-index: 3;
+  top: -3px;
+  border-radius: 0 7px 7px 7px;
+  box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px -1px inset;
+  color: #003a0e;
+  font-size: 1.1rem;
+}
+
+.btn-play {
+  font-weight: 600;
+  background: #e5ff70;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #bfd16c;
+  color: #4a543a;
+}
+
+@media screen and (min-width: 300px) {
+  html {
+    font-size: calc(8px + 12 * ((100vw - 300px) / 1300));
+  }
+}
+
+.btn-login {
+  float: right;
+  min-width: 140px;
+  margin: 3px;
+  font-weight: 600;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.btn-facebook {
+  font-weight: 600;
+  background: #3b5998;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.btn-connection {
+  font-weight: 600;
+  font-size: 16px;
+  background: #e5ff70;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #bfd16c;
+  color: #4a543a;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  justify-content: center;
+}
+
+.login-label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  padding: 0 20px;
+  line-height: 41px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+}
+
+  .login-label:hover {
+    color: #3b5998;
+    /*background-color: #fff*/
+  }
+
+
