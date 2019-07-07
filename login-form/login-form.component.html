@@ -2,7 +2,7 @@
       <div class="row d-flex">
         <div class="form-col col-centered">
           <div class="mat-dialog-container">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <!--<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">-->
             <button class="btn-facebook btn-lg login-label form-group form-col col-centered">
               Log in with Facebook
             </button>
@@ -15,7 +15,7 @@
                 formControlName="login"
                 id="login"
                 placeholder="Login"
-                [class.is-invalid]="login.invalid && login.touched"
+                <!--[class.is-invalid]="login.invalid && login.touched"-->
               />
             </div>
             <div class="form-group form-col col-centered">
@@ -26,7 +26,7 @@
                 formControlName="password"
                 id="password"
                 placeholder="Password"
-                [class.is-invalid]="password.invalid && password.touched"
+                <!--[class.is-invalid]="password.invalid && password.touched"-->
               />
             </div>
             <div class="form-check form-check-inline form-group form-col col-centered">
